@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validação HTML5</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Croissant+One&display=swap" rel="stylesheet">
+    <style>
+        body {
+            text-align: center;
+            font-size: 125%;
+        }
+        
+        form {
+            font-family: 'Croissant One', cursive;
+        }
+        /*campo de entrada de texto*/
+        label {
+            font-family: 'Raleway', sans-serif;
+            font-size: 15px;
+            
+        }
+        
+        input[type="text"] {
+            font-family: 'Raleway', sans-serif;
+            font-size: 15px;
+            
+        }
+        
+        button {
+            font-family: 'Raleway', sans-serif;
+            border: 1px solid lightgray;
+            background-color: lightgray;
+            padding: 10px 20px;
+            transition: background-color 0.3s;
+            font-size: 80%;
+        }
+        
+        button:hover {
+            background-color: darkgray;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <!--html 5, só a janela, muito mais fácil-->
+        <h1>Formulário de envio</h1>
+        <label for="nome"> Nome: </label><br>
+        <input type="text" name="nome" id="nome" required maxlength="45" required minlength="5"><br>
+        <p></p>
+        <label for="sobrenome"> Sobre Nome: </label><br>
+        <input type="text" name="sobrenome" id="sobrenome" required maxlength="45"><br><br>
+        <button>Efetuar Login</button>
+        <button>Cancelar</button>
+    </form>
+</body>
+</html>

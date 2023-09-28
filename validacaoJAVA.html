@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        body {
+            font-family: Calibri, Arial, sans-serif;
+        }
+
+        input[type="text"] {
+            width: 310px;
+        }
+
+        /*isso sõ as colunas*/
+
+        /* Adicione as seguintes propriedades para a borda e cor do título */
+
+        form {
+            border: 3px solid lightgray;
+            padding: 10px;
+            width: 320px;
+            height: 320px;
+        }
+
+        h2 {
+            color: white;
+            background-color: lightgray;
+
+            padding: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!--Aqui o formulário tem que preencher cada campo primeiro-->
+    <form onsubmit="return enviardados()">
+        <h2>Formulário de Contato</h2>
+        <strong>Nome:</strong> <br>
+        <input type="text" id="nome" name="nome" /><br>
+
+        <strong>Email:</strong> <br>
+        <input type="text" id="email" name="email" /><br>
+
+        <strong>Comentário:</strong> <br>
+        <textarea id="mensagem" name="mensagem" rows="4" cols="40"></textarea><br>
+        <br>
+
+        <input type="submit" value="Enviar">
+    </form>
+
+    <script language="JavaScript">
+        function enviardados() {
+            if (document.getElementById("nome").value == "" ||
+                document.getElementById("nome").value.length < 8) {
+                alert("Preencha campo NOME corretamente!");
+                document.getElementById("nome").focus();
+                return false;
+            }
+
+            if (document.getElementById("email").value == "" ||
+                document.getElementById("email").value.indexOf('@') == -1 ||
+                document.getElementById("email").value.indexOf('.') == -1) {
+                alert("Preencha campo E-MAIL corretamente!");
+                document.getElementById("email").focus();
+                return false;
+            }
+
+            if (document.getElementById("mensagem").value == "") {
+                alert("Preencha o campo MENSAGEM!");
+                document.getElementById("mensagem").focus();
+                return false;
+            }
+
+            if (document.getElementById("mensagem").value.length < 50) {
+                alert("É necessário preencher o campo MENSAGEM com mais de 50 caracteres!");
+                document.getElementById("mensagem").focus();
+                return false;
+            }
+
+            return true;
+        }
+        //um método JavaScript que é usado para dar foco a um elemento HTML
+        //específico. Quando um elemento recebe o foco, ele se torna o elemento
+        // ativo, o que significa que ele está pronto para receber entrada do
+        //usuário, como digitar texto em um campo de entrada ou clicar em um
+        //botão.
+    </script>
+</body>
+
+</html>

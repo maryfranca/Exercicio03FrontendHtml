@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <label for="mail">Gostaria que você me enviasse um e-mail</label>
+        <input type="email" id="mail" name="mail" />
+        <button>Enviar</button>
+    </form>
+    <script>
+        var email = document.getElementById("mail");
+        email.addEventListener("input", function (event) {
+            if (email.validity.typeMismatch) {
+                email.setCustomValidity("spero um e-mail, querida!");
+            } else {
+                email.setCustomValidity("");
+            }
+        });
+    </script>
+</body>
+
+</html>
